@@ -1,0 +1,540 @@
+{
+  "sourceImage": "/Users/liusihanyan/Downloads/ChatGPT Image 2026年5月22日 15_55_08.png",
+  "style": "warm minimal stamp icon, thin sepia line art, soft local color, ivory background, matching the Stickerful app aesthetic",
+  "functionIcons": [
+    {
+      "id": "stamp-count",
+      "label": "Stamp count",
+      "labelZh": "印章",
+      "image": "/assets/label-icons/function-icons/01-stamp-count.png",
+      "recommendedUse": "top summary card icon"
+    },
+    {
+      "id": "city-count",
+      "label": "City count",
+      "labelZh": "城市",
+      "image": "/assets/label-icons/function-icons/02-city-count.png",
+      "recommendedUse": "top summary card icon"
+    },
+    {
+      "id": "shop-count",
+      "label": "Shop count",
+      "labelZh": "店铺",
+      "image": "/assets/label-icons/function-icons/03-shop-count.png",
+      "recommendedUse": "top summary card icon"
+    }
+  ],
+  "cityIcons": [
+    {
+      "id": "san-gabriel",
+      "label": "San Gabriel",
+      "image": "/assets/label-icons/city-icons/01-san-gabriel.png",
+      "tile": "/assets/label-icons/city-tiles/01-san-gabriel.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "los-angeles",
+      "label": "Los Angeles",
+      "image": "/assets/label-icons/city-icons/02-los-angeles.png",
+      "tile": "/assets/label-icons/city-tiles/02-los-angeles.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "san-francisco",
+      "label": "San Francisco",
+      "image": "/assets/label-icons/city-icons/03-san-francisco.png",
+      "tile": "/assets/label-icons/city-tiles/03-san-francisco.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "portland",
+      "label": "Portland",
+      "image": "/assets/label-icons/city-icons/04-portland.png",
+      "tile": "/assets/label-icons/city-tiles/04-portland.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "chicago",
+      "label": "Chicago",
+      "image": "/assets/label-icons/city-icons/05-chicago.png",
+      "tile": "/assets/label-icons/city-tiles/05-chicago.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "santa-cruz",
+      "label": "Santa Cruz",
+      "image": "/assets/label-icons/city-icons/06-santa-cruz.png",
+      "tile": "/assets/label-icons/city-tiles/06-santa-cruz.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "bentonville",
+      "label": "Bentonville",
+      "image": "/assets/label-icons/city-icons/07-bentonville.png",
+      "tile": "/assets/label-icons/city-tiles/07-bentonville.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "washington-dc",
+      "label": "Washington D.C.",
+      "image": "/assets/label-icons/city-icons/08-washington-dc.png",
+      "tile": "/assets/label-icons/city-tiles/08-washington-dc.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "new-york",
+      "label": "New York",
+      "image": "/assets/label-icons/city-icons/09-new-york.png",
+      "tile": "/assets/label-icons/city-tiles/09-new-york.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "boston",
+      "label": "Boston",
+      "image": "/assets/label-icons/city-icons/10-boston.png",
+      "tile": "/assets/label-icons/city-tiles/10-boston.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "seattle",
+      "label": "Seattle",
+      "image": "/assets/label-icons/city-icons/11-seattle.png",
+      "tile": "/assets/label-icons/city-tiles/11-seattle.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "phoenix",
+      "label": "Phoenix",
+      "image": "/assets/label-icons/city-icons/12-phoenix.png",
+      "tile": "/assets/label-icons/city-tiles/12-phoenix.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "orlando",
+      "label": "Orlando",
+      "image": "/assets/label-icons/city-icons/13-orlando.png",
+      "tile": "/assets/label-icons/city-tiles/13-orlando.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "new-orleans",
+      "label": "New Orleans",
+      "image": "/assets/label-icons/city-icons/14-new-orleans.png",
+      "tile": "/assets/label-icons/city-tiles/14-new-orleans.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "beijing",
+      "label": "Beijing",
+      "labelZh": "北京",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/15-beijing.png",
+      "tile": "/assets/label-icons/city-tiles/15-beijing.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "shanghai",
+      "label": "Shanghai",
+      "labelZh": "上海",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/16-shanghai.png",
+      "tile": "/assets/label-icons/city-tiles/16-shanghai.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "guangzhou",
+      "label": "Guangzhou",
+      "labelZh": "广州",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/17-guangzhou.png",
+      "tile": "/assets/label-icons/city-tiles/17-guangzhou.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "shenzhen",
+      "label": "Shenzhen",
+      "labelZh": "深圳",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/18-shenzhen.png",
+      "tile": "/assets/label-icons/city-tiles/18-shenzhen.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "chengdu",
+      "label": "Chengdu",
+      "labelZh": "成都",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/19-chengdu.png",
+      "tile": "/assets/label-icons/city-tiles/19-chengdu.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "hangzhou",
+      "label": "Hangzhou",
+      "labelZh": "杭州",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/20-hangzhou.png",
+      "tile": "/assets/label-icons/city-tiles/20-hangzhou.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "nanjing",
+      "label": "Nanjing",
+      "labelZh": "南京",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/21-nanjing.png",
+      "tile": "/assets/label-icons/city-tiles/21-nanjing.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "suzhou",
+      "label": "Suzhou",
+      "labelZh": "苏州",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/22-suzhou.png",
+      "tile": "/assets/label-icons/city-tiles/22-suzhou.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "wuhan",
+      "label": "Wuhan",
+      "labelZh": "武汉",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/23-wuhan.png",
+      "tile": "/assets/label-icons/city-tiles/23-wuhan.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "xian",
+      "label": "Xi'an",
+      "labelZh": "西安",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/24-xian.png",
+      "tile": "/assets/label-icons/city-tiles/24-xian.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "chongqing",
+      "label": "Chongqing",
+      "labelZh": "重庆",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/25-chongqing.png",
+      "tile": "/assets/label-icons/city-tiles/25-chongqing.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "tianjin",
+      "label": "Tianjin",
+      "labelZh": "天津",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/26-tianjin.png",
+      "tile": "/assets/label-icons/city-tiles/26-tianjin.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "changsha",
+      "label": "Changsha",
+      "labelZh": "长沙",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/27-changsha.png",
+      "tile": "/assets/label-icons/city-tiles/27-changsha.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "shenyang",
+      "label": "Shenyang",
+      "labelZh": "沈阳",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/28-shenyang.png",
+      "tile": "/assets/label-icons/city-tiles/28-shenyang.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "dalian",
+      "label": "Dalian",
+      "labelZh": "大连",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/29-dalian.png",
+      "tile": "/assets/label-icons/city-tiles/29-dalian.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "qingdao",
+      "label": "Qingdao",
+      "labelZh": "青岛",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/30-qingdao.png",
+      "tile": "/assets/label-icons/city-tiles/30-qingdao.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "xiamen",
+      "label": "Xiamen",
+      "labelZh": "厦门",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/31-xiamen.png",
+      "tile": "/assets/label-icons/city-tiles/31-xiamen.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "hefei",
+      "label": "Hefei",
+      "labelZh": "合肥",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/32-hefei.png",
+      "tile": "/assets/label-icons/city-tiles/32-hefei.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "zhengzhou",
+      "label": "Zhengzhou",
+      "labelZh": "郑州",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/33-zhengzhou.png",
+      "tile": "/assets/label-icons/city-tiles/33-zhengzhou.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "jinan",
+      "label": "Jinan",
+      "labelZh": "济南",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/34-jinan.png",
+      "tile": "/assets/label-icons/city-tiles/34-jinan.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "fuzhou",
+      "label": "Fuzhou",
+      "labelZh": "福州",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/35-fuzhou.png",
+      "tile": "/assets/label-icons/city-tiles/35-fuzhou.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "kunming",
+      "label": "Kunming",
+      "labelZh": "昆明",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/36-kunming.png",
+      "tile": "/assets/label-icons/city-tiles/36-kunming.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "nanchang",
+      "label": "Nanchang",
+      "labelZh": "南昌",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/37-nanchang.png",
+      "tile": "/assets/label-icons/city-tiles/37-nanchang.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "harbin",
+      "label": "Harbin",
+      "labelZh": "哈尔滨",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/38-harbin.png",
+      "tile": "/assets/label-icons/city-tiles/38-harbin.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "changchun",
+      "label": "Changchun",
+      "labelZh": "长春",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/39-changchun.png",
+      "tile": "/assets/label-icons/city-tiles/39-changchun.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "shijiazhuang",
+      "label": "Shijiazhuang",
+      "labelZh": "石家庄",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/40-shijiazhuang.png",
+      "tile": "/assets/label-icons/city-tiles/40-shijiazhuang.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "taiyuan",
+      "label": "Taiyuan",
+      "labelZh": "太原",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/41-taiyuan.png",
+      "tile": "/assets/label-icons/city-tiles/41-taiyuan.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "guiyang",
+      "label": "Guiyang",
+      "labelZh": "贵阳",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/42-guiyang.png",
+      "tile": "/assets/label-icons/city-tiles/42-guiyang.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "nanning",
+      "label": "Nanning",
+      "labelZh": "南宁",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/43-nanning.png",
+      "tile": "/assets/label-icons/city-tiles/43-nanning.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "haikou",
+      "label": "Haikou",
+      "labelZh": "海口",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/44-haikou.png",
+      "tile": "/assets/label-icons/city-tiles/44-haikou.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "lanzhou",
+      "label": "Lanzhou",
+      "labelZh": "兰州",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/45-lanzhou.png",
+      "tile": "/assets/label-icons/city-tiles/45-lanzhou.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "yinchuan",
+      "label": "Yinchuan",
+      "labelZh": "银川",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/46-yinchuan.png",
+      "tile": "/assets/label-icons/city-tiles/46-yinchuan.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "xining",
+      "label": "Xining",
+      "labelZh": "西宁",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/47-xining.png",
+      "tile": "/assets/label-icons/city-tiles/47-xining.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "hohhot",
+      "label": "Hohhot",
+      "labelZh": "呼和浩特",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/48-hohhot.png",
+      "tile": "/assets/label-icons/city-tiles/48-hohhot.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "urumqi",
+      "label": "Urumqi",
+      "labelZh": "乌鲁木齐",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/49-urumqi.png",
+      "tile": "/assets/label-icons/city-tiles/49-urumqi.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "lhasa",
+      "label": "Lhasa",
+      "labelZh": "拉萨",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/50-lhasa.png",
+      "tile": "/assets/label-icons/city-tiles/50-lhasa.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "wuxi",
+      "label": "Wuxi",
+      "labelZh": "无锡",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/51-wuxi.png",
+      "tile": "/assets/label-icons/city-tiles/51-wuxi.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "ningbo",
+      "label": "Ningbo",
+      "labelZh": "宁波",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/52-ningbo.png",
+      "tile": "/assets/label-icons/city-tiles/52-ningbo.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "foshan",
+      "label": "Foshan",
+      "labelZh": "佛山",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/53-foshan.png",
+      "tile": "/assets/label-icons/city-tiles/53-foshan.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "dongguan",
+      "label": "Dongguan",
+      "labelZh": "东莞",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/54-dongguan.png",
+      "tile": "/assets/label-icons/city-tiles/54-dongguan.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "zhuhai",
+      "label": "Zhuhai",
+      "labelZh": "珠海",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/55-zhuhai.png",
+      "tile": "/assets/label-icons/city-tiles/55-zhuhai.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "changzhou",
+      "label": "Changzhou",
+      "labelZh": "常州",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/56-changzhou.png",
+      "tile": "/assets/label-icons/city-tiles/56-changzhou.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "shaoxing",
+      "label": "Shaoxing",
+      "labelZh": "绍兴",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/57-shaoxing.png",
+      "tile": "/assets/label-icons/city-tiles/57-shaoxing.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "quanzhou",
+      "label": "Quanzhou",
+      "labelZh": "泉州",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/58-quanzhou.png",
+      "tile": "/assets/label-icons/city-tiles/58-quanzhou.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    },
+    {
+      "id": "wenzhou",
+      "label": "Wenzhou",
+      "labelZh": "温州",
+      "country": "China",
+      "image": "/assets/label-icons/city-icons/59-wenzhou.png",
+      "tile": "/assets/label-icons/city-tiles/59-wenzhou.png",
+      "recommendedUse": "city row/list icon; keep city name as live UI text"
+    }
+  ],
+  "notes": [
+    "Use function-icons for the three top summary cards: stamps, cities, shops.",
+    "Use city-icons for city list rows; do not bake city names into images.",
+    "Use city-tiles only as visual reference or picker thumbnails, not inside dense rows unless the UI has room.",
+    "Chinese city icons were appended after the existing city icons; use labelZh for Chinese UI city names.",
+    "For unknown Chinese cities, fall back to /assets/label-icons/function-icons/02-city-count.png."
+  ],
+  "chinaCitySourceImage": "/Users/liusihanyan/Downloads/ChatGPT Image 2026年5月22日 16_40_25.png"
+}

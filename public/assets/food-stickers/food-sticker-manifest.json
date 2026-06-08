@@ -1,0 +1,1009 @@
+[
+  {
+    "id": "coffee-cup",
+    "label": "Coffee cup",
+    "row": 1,
+    "column": 1,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 23,
+      "y": 22,
+      "width": 162,
+      "height": 162
+    },
+    "fullTile": "/assets/food-stickers/full-tile/01-coffee-cup.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/01-coffee-cup.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "brown-sugar-boba",
+    "label": "Brown sugar boba",
+    "row": 1,
+    "column": 2,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 196,
+      "y": 22,
+      "width": 160,
+      "height": 162
+    },
+    "fullTile": "/assets/food-stickers/full-tile/02-brown-sugar-boba.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/02-brown-sugar-boba.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "latte-art",
+    "label": "Latte art",
+    "row": 1,
+    "column": 3,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 368,
+      "y": 22,
+      "width": 159,
+      "height": 162
+    },
+    "fullTile": "/assets/food-stickers/full-tile/03-latte-art.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/03-latte-art.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "milk-tea-boba",
+    "label": "Milk tea boba",
+    "row": 1,
+    "column": 4,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 539,
+      "y": 22,
+      "width": 160,
+      "height": 162
+    },
+    "fullTile": "/assets/food-stickers/full-tile/04-milk-tea-boba.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/04-milk-tea-boba.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "matcha-latte",
+    "label": "Matcha latte",
+    "row": 1,
+    "column": 5,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 711,
+      "y": 22,
+      "width": 161,
+      "height": 162
+    },
+    "fullTile": "/assets/food-stickers/full-tile/05-matcha-latte.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/05-matcha-latte.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "teapot",
+    "label": "Teapot",
+    "row": 1,
+    "column": 6,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 884,
+      "y": 22,
+      "width": 160,
+      "height": 162
+    },
+    "fullTile": "/assets/food-stickers/full-tile/06-teapot.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/06-teapot.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "fruit-tea",
+    "label": "Fruit tea",
+    "row": 2,
+    "column": 1,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 23,
+      "y": 191,
+      "width": 162,
+      "height": 160
+    },
+    "fullTile": "/assets/food-stickers/full-tile/07-fruit-tea.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/07-fruit-tea.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "tropical-cocktail",
+    "label": "Tropical cocktail",
+    "row": 2,
+    "column": 2,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 196,
+      "y": 191,
+      "width": 160,
+      "height": 160
+    },
+    "fullTile": "/assets/food-stickers/full-tile/08-tropical-cocktail.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/08-tropical-cocktail.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "martini",
+    "label": "Martini",
+    "row": 2,
+    "column": 3,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 368,
+      "y": 191,
+      "width": 159,
+      "height": 160
+    },
+    "fullTile": "/assets/food-stickers/full-tile/09-martini.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/09-martini.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "red-wine",
+    "label": "Red wine",
+    "row": 2,
+    "column": 4,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 539,
+      "y": 191,
+      "width": 160,
+      "height": 160
+    },
+    "fullTile": "/assets/food-stickers/full-tile/10-red-wine.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/10-red-wine.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "champagne",
+    "label": "Champagne",
+    "row": 2,
+    "column": 5,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 711,
+      "y": 191,
+      "width": 161,
+      "height": 160
+    },
+    "fullTile": "/assets/food-stickers/full-tile/11-champagne.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/11-champagne.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "beer-mug",
+    "label": "Beer mug",
+    "row": 2,
+    "column": 6,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 884,
+      "y": 191,
+      "width": 160,
+      "height": 160
+    },
+    "fullTile": "/assets/food-stickers/full-tile/12-beer-mug.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/12-beer-mug.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "croissant",
+    "label": "Croissant",
+    "row": 3,
+    "column": 1,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 23,
+      "y": 358,
+      "width": 162,
+      "height": 158
+    },
+    "fullTile": "/assets/food-stickers/full-tile/13-croissant.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/13-croissant.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "toast-loaf",
+    "label": "Toast loaf",
+    "row": 3,
+    "column": 2,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 196,
+      "y": 358,
+      "width": 160,
+      "height": 158
+    },
+    "fullTile": "/assets/food-stickers/full-tile/14-toast-loaf.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/14-toast-loaf.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "buttered-toast",
+    "label": "Buttered toast",
+    "row": 3,
+    "column": 3,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 368,
+      "y": 358,
+      "width": 159,
+      "height": 158
+    },
+    "fullTile": "/assets/food-stickers/full-tile/15-buttered-toast.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/15-buttered-toast.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "cupcake",
+    "label": "Cupcake",
+    "row": 3,
+    "column": 4,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 539,
+      "y": 358,
+      "width": 160,
+      "height": 158
+    },
+    "fullTile": "/assets/food-stickers/full-tile/16-cupcake.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/16-cupcake.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "pink-donut",
+    "label": "Pink donut",
+    "row": 3,
+    "column": 5,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 711,
+      "y": 358,
+      "width": 161,
+      "height": 158
+    },
+    "fullTile": "/assets/food-stickers/full-tile/17-pink-donut.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/17-pink-donut.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "cookie",
+    "label": "Cookie",
+    "row": 3,
+    "column": 6,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 884,
+      "y": 358,
+      "width": 160,
+      "height": 158
+    },
+    "fullTile": "/assets/food-stickers/full-tile/18-cookie.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/18-cookie.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "birthday-cake",
+    "label": "Birthday cake",
+    "row": 4,
+    "column": 1,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 23,
+      "y": 524,
+      "width": 162,
+      "height": 159
+    },
+    "fullTile": "/assets/food-stickers/full-tile/19-birthday-cake.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/19-birthday-cake.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "strawberry-cake-slice",
+    "label": "Strawberry cake slice",
+    "row": 4,
+    "column": 2,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 196,
+      "y": 524,
+      "width": 160,
+      "height": 159
+    },
+    "fullTile": "/assets/food-stickers/full-tile/20-strawberry-cake-slice.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/20-strawberry-cake-slice.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "rice-bowl",
+    "label": "Rice bowl",
+    "row": 4,
+    "column": 3,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 368,
+      "y": 524,
+      "width": 159,
+      "height": 159
+    },
+    "fullTile": "/assets/food-stickers/full-tile/21-rice-bowl.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/21-rice-bowl.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "ramen",
+    "label": "Ramen",
+    "row": 4,
+    "column": 4,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 539,
+      "y": 524,
+      "width": 160,
+      "height": 159
+    },
+    "fullTile": "/assets/food-stickers/full-tile/22-ramen.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/22-ramen.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "sushi-bento",
+    "label": "Sushi bento",
+    "row": 4,
+    "column": 5,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 711,
+      "y": 524,
+      "width": 161,
+      "height": 159
+    },
+    "fullTile": "/assets/food-stickers/full-tile/23-sushi-bento.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/23-sushi-bento.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "bao",
+    "label": "Bao",
+    "row": 4,
+    "column": 6,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 884,
+      "y": 524,
+      "width": 160,
+      "height": 159
+    },
+    "fullTile": "/assets/food-stickers/full-tile/24-bao.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/24-bao.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "cream-soup",
+    "label": "Cream soup",
+    "row": 5,
+    "column": 1,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 23,
+      "y": 692,
+      "width": 162,
+      "height": 155
+    },
+    "fullTile": "/assets/food-stickers/full-tile/25-cream-soup.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/25-cream-soup.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "miso-soup",
+    "label": "Miso soup",
+    "row": 5,
+    "column": 2,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 196,
+      "y": 692,
+      "width": 160,
+      "height": 155
+    },
+    "fullTile": "/assets/food-stickers/full-tile/26-miso-soup.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/26-miso-soup.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "salad-bowl",
+    "label": "Salad bowl",
+    "row": 5,
+    "column": 3,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 368,
+      "y": 692,
+      "width": 159,
+      "height": 155
+    },
+    "fullTile": "/assets/food-stickers/full-tile/27-salad-bowl.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/27-salad-bowl.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "spaghetti",
+    "label": "Spaghetti",
+    "row": 5,
+    "column": 4,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 539,
+      "y": 692,
+      "width": 160,
+      "height": 155
+    },
+    "fullTile": "/assets/food-stickers/full-tile/28-spaghetti.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/28-spaghetti.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "pizza-slice",
+    "label": "Pizza slice",
+    "row": 5,
+    "column": 5,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 711,
+      "y": 692,
+      "width": 161,
+      "height": 155
+    },
+    "fullTile": "/assets/food-stickers/full-tile/29-pizza-slice.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/29-pizza-slice.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "burger",
+    "label": "Burger",
+    "row": 5,
+    "column": 6,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 884,
+      "y": 692,
+      "width": 160,
+      "height": 155
+    },
+    "fullTile": "/assets/food-stickers/full-tile/30-burger.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/30-burger.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "steak",
+    "label": "Steak",
+    "row": 6,
+    "column": 1,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 23,
+      "y": 855,
+      "width": 162,
+      "height": 144
+    },
+    "fullTile": "/assets/food-stickers/full-tile/31-steak.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/31-steak.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "taco",
+    "label": "Taco",
+    "row": 6,
+    "column": 2,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 196,
+      "y": 855,
+      "width": 160,
+      "height": 144
+    },
+    "fullTile": "/assets/food-stickers/full-tile/32-taco.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/32-taco.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "bibimbap",
+    "label": "Bibimbap",
+    "row": 6,
+    "column": 3,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 368,
+      "y": 855,
+      "width": 159,
+      "height": 144
+    },
+    "fullTile": "/assets/food-stickers/full-tile/33-bibimbap.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/33-bibimbap.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "curry-rice",
+    "label": "Curry rice",
+    "row": 6,
+    "column": 4,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 539,
+      "y": 855,
+      "width": 160,
+      "height": 144
+    },
+    "fullTile": "/assets/food-stickers/full-tile/34-curry-rice.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/34-curry-rice.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "beef-noodle-soup",
+    "label": "Beef noodle soup",
+    "row": 6,
+    "column": 5,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 711,
+      "y": 855,
+      "width": 161,
+      "height": 144
+    },
+    "fullTile": "/assets/food-stickers/full-tile/35-beef-noodle-soup.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/35-beef-noodle-soup.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "shumai",
+    "label": "Shumai",
+    "row": 6,
+    "column": 6,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 884,
+      "y": 855,
+      "width": 160,
+      "height": 144
+    },
+    "fullTile": "/assets/food-stickers/full-tile/36-shumai.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/36-shumai.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "stir-fry",
+    "label": "Stir fry",
+    "row": 7,
+    "column": 1,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 23,
+      "y": 1006,
+      "width": 162,
+      "height": 134
+    },
+    "fullTile": "/assets/food-stickers/full-tile/37-stir-fry.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/37-stir-fry.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "hot-pot",
+    "label": "Hot pot",
+    "row": 7,
+    "column": 2,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 196,
+      "y": 1006,
+      "width": 160,
+      "height": 134
+    },
+    "fullTile": "/assets/food-stickers/full-tile/38-hot-pot.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/38-hot-pot.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "yakitori",
+    "label": "Yakitori",
+    "row": 7,
+    "column": 3,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 368,
+      "y": 1006,
+      "width": 159,
+      "height": 134
+    },
+    "fullTile": "/assets/food-stickers/full-tile/39-yakitori.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/39-yakitori.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "fried-chicken",
+    "label": "Fried chicken",
+    "row": 7,
+    "column": 4,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 539,
+      "y": 1006,
+      "width": 160,
+      "height": 134
+    },
+    "fullTile": "/assets/food-stickers/full-tile/40-fried-chicken.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/40-fried-chicken.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "rice-noodle-soup",
+    "label": "Rice noodle soup",
+    "row": 7,
+    "column": 5,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 711,
+      "y": 1006,
+      "width": 161,
+      "height": 134
+    },
+    "fullTile": "/assets/food-stickers/full-tile/41-rice-noodle-soup.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/41-rice-noodle-soup.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "dumplings",
+    "label": "Dumplings",
+    "row": 7,
+    "column": 6,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 884,
+      "y": 1006,
+      "width": 160,
+      "height": 134
+    },
+    "fullTile": "/assets/food-stickers/full-tile/42-dumplings.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/42-dumplings.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "yin-yang-hot-pot",
+    "label": "Yin yang hot pot",
+    "row": 8,
+    "column": 1,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 23,
+      "y": 1147,
+      "width": 162,
+      "height": 126
+    },
+    "fullTile": "/assets/food-stickers/full-tile/43-yin-yang-hot-pot.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/43-yin-yang-hot-pot.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "large-bao-steamer",
+    "label": "Large bao steamer",
+    "row": 8,
+    "column": 2,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 196,
+      "y": 1147,
+      "width": 160,
+      "height": 126
+    },
+    "fullTile": "/assets/food-stickers/full-tile/44-large-bao-steamer.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/44-large-bao-steamer.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "roast-duck",
+    "label": "Roast duck",
+    "row": 8,
+    "column": 3,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 368,
+      "y": 1147,
+      "width": 159,
+      "height": 126
+    },
+    "fullTile": "/assets/food-stickers/full-tile/45-roast-duck.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/45-roast-duck.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "congee",
+    "label": "Congee",
+    "row": 8,
+    "column": 4,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 539,
+      "y": 1147,
+      "width": 160,
+      "height": 126
+    },
+    "fullTile": "/assets/food-stickers/full-tile/46-congee.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/46-congee.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "scallion-pancake",
+    "label": "Scallion pancake",
+    "row": 8,
+    "column": 5,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 711,
+      "y": 1147,
+      "width": 161,
+      "height": 126
+    },
+    "fullTile": "/assets/food-stickers/full-tile/47-scallion-pancake.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/47-scallion-pancake.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "mapo-tofu",
+    "label": "Mapo tofu",
+    "row": 8,
+    "column": 6,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 884,
+      "y": 1147,
+      "width": 160,
+      "height": 126
+    },
+    "fullTile": "/assets/food-stickers/full-tile/48-mapo-tofu.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/48-mapo-tofu.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "spring-rolls",
+    "label": "Spring rolls",
+    "row": 9,
+    "column": 1,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 23,
+      "y": 1273,
+      "width": 162,
+      "height": 119
+    },
+    "fullTile": "/assets/food-stickers/full-tile/49-spring-rolls.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/49-spring-rolls.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "mooncake",
+    "label": "Mooncake",
+    "row": 9,
+    "column": 2,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 196,
+      "y": 1273,
+      "width": 160,
+      "height": 119
+    },
+    "fullTile": "/assets/food-stickers/full-tile/50-mooncake.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/50-mooncake.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "egg-tart",
+    "label": "Egg tart",
+    "row": 9,
+    "column": 3,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 368,
+      "y": 1273,
+      "width": 159,
+      "height": 119
+    },
+    "fullTile": "/assets/food-stickers/full-tile/51-egg-tart.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/51-egg-tart.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "sweet-sour-meatballs",
+    "label": "Sweet sour meatballs",
+    "row": 9,
+    "column": 4,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 539,
+      "y": 1273,
+      "width": 160,
+      "height": 119
+    },
+    "fullTile": "/assets/food-stickers/full-tile/52-sweet-sour-meatballs.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/52-sweet-sour-meatballs.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  },
+  {
+    "id": "kung-pao-chicken",
+    "label": "Kung pao chicken",
+    "row": 9,
+    "column": 5,
+    "size": {
+      "width": 160,
+      "height": 160
+    },
+    "sourceBox": {
+      "x": 711,
+      "y": 1273,
+      "width": 161,
+      "height": 119
+    },
+    "fullTile": "/assets/food-stickers/full-tile/53-kung-pao-chicken.png",
+    "transparentIcon": "/assets/food-stickers/icon-transparent/53-kung-pao-chicken.png",
+    "style": "soft watercolor food sticker, warm cream, rounded square tile, gentle shadow, cute app icon aesthetic"
+  }
+]

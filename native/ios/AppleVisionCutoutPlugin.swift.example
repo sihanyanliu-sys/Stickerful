@@ -1,0 +1,23 @@
+// Template only. This file is not active in the current Vite web build.
+// Use it when Stickerful is wrapped in an iOS native shell such as Capacitor.
+//
+// Expected JavaScript API:
+//   Capacitor.Plugins.AppleVisionCutout.cutout({ image: "data:image/jpeg;base64,..." })
+// returns:
+//   { image: "data:image/png;base64,..." }
+//
+// The exact Vision implementation depends on your minimum iOS target.
+// For iOS 17+, prefer Vision foreground-instance masking APIs.
+
+import Foundation
+import UIKit
+import Vision
+
+@objc(AppleVisionCutoutPlugin)
+final class AppleVisionCutoutPlugin: NSObject {
+  @objc func cutout(_ call: Any) {
+    // This is a placeholder template. The active bridge depends on the native
+    // wrapper you choose. For Capacitor, implement CAPPlugin and CAPBridgedPlugin,
+    // then read `image` from CAPPluginCall and resolve with `{ "image": dataUrl }`.
+  }
+}

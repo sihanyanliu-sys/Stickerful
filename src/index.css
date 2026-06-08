@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lora', Georgia, 'PingFang SC', -apple-system, serif;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { width: 100%; min-height: 100svh; }
+
+/* ── Design tokens — Warm Caramel theme ── */
+.app-container {
+  /* Backgrounds */
+  --bg:         #F2EDE3;
+  --surface:    #FFFCF8;
+  --surface-2:  #F5EFE4;
+
+  /* Text */
+  --text-1:     #2C1810;
+  --text-2:     #9B8B7C;
+  --text-3:     #C4B5A5;
+  --brand-text: #4A2F1F;          /* Slightly lifted from text-1, used for the Stickerful logotype */
+
+  /* Brand */
+  --accent:     #C98D48;
+  --accent-dim: rgba(201,141,72,0.14);
+  --accent-dark:#2C1810;
+
+  /* Borders & shadows */
+  --border:     #E8DDD0;
+  --shadow-sm:  0 1px 4px rgba(44,24,16,0.07);
+  --shadow-md:  0 4px 16px rgba(44,24,16,0.10);
+  --shadow-lg:  0 8px 32px rgba(44,24,16,0.13);
+
+  /* Nav */
+  --nav-bg:     rgba(255,252,248,0.94);
+}
+
+/* ── Dark mode ── */
+.app-container.theme-dark {
+  --bg:         #1A1410;
+  --surface:    #2A2018;
+  --surface-2:  #332818;
+  --text-1:     #F2EDE3;
+  --text-2:     #A89880;
+  --text-3:     #6E5E50;
+  --brand-text: #E8DFD0;          /* Warm cream variant of brand-text in dark theme */
+  --border:     #3A2E24;
+  --shadow-sm:  0 1px 4px rgba(0,0,0,0.25);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.30);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.40);
+  --nav-bg:     rgba(26,20,16,0.94);
+}
+
+/* ── Shared texture system ── */
+.app-container,
+.texture-preview {
+  --texture-bg: var(--bg);
+  --texture-image: none;
+  --texture-size: auto;
+}
+
+.app-container {
+  background-color: var(--texture-bg);
+  background-image: var(--texture-image);
+  background-size: var(--texture-size);
+}
+
+.texture-preview,
+.app-page-bg {
+  background-color: var(--texture-bg);
+  background-image: var(--texture-image);
+  background-size: var(--texture-size);
+}
+
+/* Explicit texture overrides (light theme only; App.jsx blocks them in dark). */
+.app-container.texture-paper,
+.texture-preview.texture-paper,
+.app-page-bg.texture-paper {
+  --texture-bg: #ECEDEB;
+  --texture-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='210' height='210'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='210' height='210' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 42% 18%, rgba(255,255,255,0.58) 0, rgba(255,255,255,0.26) 24%, rgba(255,255,255,0) 54%),
+    radial-gradient(ellipse at 18% 78%, rgba(246,210,196,0.50) 0, rgba(246,210,196,0.26) 26%, rgba(246,210,196,0) 58%),
+    radial-gradient(ellipse at 78% 86%, rgba(222,184,238,0.58) 0, rgba(222,184,238,0.30) 28%, rgba(222,184,238,0) 60%),
+    linear-gradient(180deg, #ECEDEB 0%, #E9EAE8 44%, #EAE4DE 70%, #E8D5DF 100%);
+  --texture-size: 210px 210px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+}
+.app-container.texture-linen,
+.texture-preview.texture-linen,
+.app-page-bg.texture-linen {
+  --texture-bg: #EEF2F0;
+  --texture-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 50% 42%, rgba(255,250,224,0.78) 0, rgba(255,250,224,0.50) 19%, rgba(255,250,224,0) 42%),
+    radial-gradient(ellipse at 28% 58%, rgba(240,245,224,0.74) 0, rgba(240,245,224,0.42) 28%, rgba(240,245,224,0) 58%),
+    radial-gradient(ellipse at 70% 56%, rgba(229,238,230,0.68) 0, rgba(229,238,230,0.34) 27%, rgba(229,238,230,0) 58%),
+    linear-gradient(180deg, #AEBCC2 0%, #C9D3D4 24%, #E8EBDE 50%, #F5F0D8 74%, #FAF3DA 100%);
+  --texture-size: 220px 220px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+}
+.app-container.texture-noise,
+.texture-preview.texture-noise,
+.app-page-bg.texture-noise {
+  --texture-bg: #EEF3F0;
+  --texture-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E"),
+    radial-gradient(circle at 18% 16%, rgba(193,241,219,0.72) 0, rgba(193,241,219,0.42) 24%, rgba(193,241,219,0) 48%),
+    radial-gradient(circle at 72% 18%, rgba(248,255,193,0.68) 0, rgba(248,255,193,0.36) 26%, rgba(248,255,193,0) 52%),
+    radial-gradient(circle at 42% 44%, rgba(205,228,255,0.72) 0, rgba(205,228,255,0.44) 30%, rgba(205,228,255,0) 58%),
+    radial-gradient(circle at 20% 88%, rgba(244,205,210,0.56) 0, rgba(244,205,210,0.32) 28%, rgba(244,205,210,0) 56%),
+    radial-gradient(circle at 86% 76%, rgba(250,242,220,0.74) 0, rgba(250,242,220,0.46) 30%, rgba(250,242,220,0) 58%),
+    linear-gradient(135deg, rgba(238,247,244,0.92) 0%, rgba(236,242,250,0.82) 48%, rgba(251,248,232,0.88) 100%);
+  --texture-size: 180px 180px, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+}
+
+/* ── Typography helpers ── */
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+/* Brand display — chunky rounded Fredoka, used for the Stickerful logotype/title.
+   Color follows --text-1 so it reads as deep coffee-brown in light theme and
+   cream in dark theme. */
+.font-brand {
+  font-family: 'Fredoka', 'Playfair Display', Georgia, sans-serif;
+  letter-spacing: -0.01em;
+}
+.font-serif {
+  font-family: 'Lora', Georgia, 'PingFang SC', serif;
+}
+.font-mono-stamp {
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 0.04em;
+}
+
+/* ── Sticker / cutout effect for food photos ── */
+.sticker {
+  border-radius: 50%;
+  outline: 4px solid #ffffff;
+  outline-offset: 0px;
+  box-shadow: 0 2px 10px rgba(44,24,16,0.15);
+}
+
+/* ── Utility token classes ── */
+.t-bg      { background: var(--bg); }
+.t-surface { background: var(--surface); }
+.t-text-1  { color: var(--text-1); }
+.t-text-2  { color: var(--text-2); }
+.t-border  { border-color: var(--border); }
+
+/* ── Global input / textarea resets ── */
+input, textarea, select {
+  font-family: inherit;
+  color: var(--text-1);
+}
+input::placeholder, textarea::placeholder {
+  color: var(--text-3);
+}
+
+/* ── Scrollbar hide ── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Leaflet map pins use our own HTML; remove the library's default square icon box. */
+.stickerful-map-pin {
+  background: transparent;
+  border: 0;
+  z-index: 700;
+}

@@ -1,0 +1,35 @@
+{
+  "style": "warm ivory circular setting icons with caramel linework, matching the app's soft food-label aesthetic",
+  "icons": [
+    {
+      "id": "profile",
+      "labelZh": "个人信息",
+      "image": "/assets/settings-icons/profile.svg"
+    },
+    {
+      "id": "preferences",
+      "labelZh": "偏好设置",
+      "image": "/assets/settings-icons/preferences.svg"
+    },
+    {
+      "id": "stamp-settings",
+      "labelZh": "印章设置",
+      "image": "/assets/settings-icons/stamp.svg"
+    },
+    {
+      "id": "texture",
+      "labelZh": "界面纹理",
+      "image": "/assets/settings-icons/texture.svg"
+    },
+    {
+      "id": "general",
+      "labelZh": "通用设置",
+      "image": "/assets/settings-icons/general.svg"
+    },
+    {
+      "id": "auto-theme",
+      "labelZh": "自动主题",
+      "image": "/assets/settings-icons/auto-theme.svg"
+    }
+  ]
+}

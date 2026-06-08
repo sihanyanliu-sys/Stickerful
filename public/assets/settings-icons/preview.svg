@@ -1,0 +1,9 @@
+<svg width="720" height="160" viewBox="0 0 720 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="160" rx="28" fill="#F6F1EA"/>
+  <image href="./profile.svg" x="32" y="32" width="96" height="96"/>
+  <image href="./preferences.svg" x="144" y="32" width="96" height="96"/>
+  <image href="./stamp.svg" x="256" y="32" width="96" height="96"/>
+  <image href="./texture.svg" x="368" y="32" width="96" height="96"/>
+  <image href="./general.svg" x="480" y="32" width="96" height="96"/>
+  <image href="./auto-theme.svg" x="592" y="32" width="96" height="96"/>
+</svg>
