@@ -91,24 +91,26 @@ function AppInner() {
   const current = stack[stack.length - 1]
 
   function saveRecords(next) {
-    setRecords(next)
     try {
       localStorage.setItem('stickerful_records', JSON.stringify(next))
+      setRecords(next)
+      return true
     } catch (error) {
       if (import.meta.env.DEV) console.warn('Failed to save records locally:', error)
+      return false
     }
   }
 
   function addRecord(record) {
-    saveRecords([record, ...records])
+    return saveRecords([record, ...records])
   }
 
   function updateRecord(record) {
-    saveRecords(records.map(r => r.id === record.id ? record : r))
+    return saveRecords(records.map(r => r.id === record.id ? record : r))
   }
 
   function deleteRecord(id) {
-    saveRecords(records.filter(r => r.id !== id))
+    return saveRecords(records.filter(r => r.id !== id))
   }
 
   function navigate(target, params = {}) {

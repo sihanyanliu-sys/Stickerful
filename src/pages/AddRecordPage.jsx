@@ -1,7 +1,7 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useSettings } from '../context/SettingsContext'
 import { stickerList, stickerMap } from '../stickerData'
-import { compressImageDataUrl } from '../utils/compressImage'
+import { compressImageDataUrl, compressTransparentImageDataUrl } from '../utils/compressImage'
 import { recognizeFoodImage } from '../services/aiProvider'
 import { createCutoutDetailed } from '../services/cutoutProvider'
 
@@ -81,8 +81,8 @@ export default function AddRecordPage({ navigate, params = {}, addRecord, update
   const [cat,      setCat]      = useState('全部')
   const [rating,   setRating]   = useState(restore.rating   ?? params.stamp?.rating   ?? 0)
   const [note,     setNote]     = useState(restore.note     ?? params.stamp?.note     ?? '')
-  const [shopName, setShopName] = useState(prefillShop?.name  || restore.shopName || params.stamp?.shopName || '')
-  const [city,     setCity]     = useState(prefillShop?.city  || restore.city     || params.stamp?.city     || '')
+  const [shopName] = useState(prefillShop?.name  || restore.shopName || params.stamp?.shopName || '')
+  const [city]     = useState(prefillShop?.city  || restore.city     || params.stamp?.city     || '')
   const shopLat    = prefillShop?.lat     || params.stamp?.lat     || null
   const shopLng    = prefillShop?.lng     || params.stamp?.lng     || null
   const shopProvider = prefillShop?.provider || params.stamp?.provider || null
@@ -107,11 +107,12 @@ export default function AddRecordPage({ navigate, params = {}, addRecord, update
   const [aiLoading, setAiLoading] = useState(false)
   const [aiError,   setAiError]   = useState(null)
 
-  // base64Ref stores the full data URL for re-recognition
-  if (photo && photo.startsWith('data:') && !base64Ref.current) {
-    base64Ref.current = photo
-    aiImageRef.current = null
-  }
+  useEffect(() => {
+    if (photo && photo.startsWith('data:') && !base64Ref.current) {
+      base64Ref.current = photo
+      aiImageRef.current = null
+    }
+  }, [photo])
 
   async function runRecognition(noteHint) {
     if (!base64Ref.current) return
@@ -149,7 +150,8 @@ export default function AddRecordPage({ navigate, params = {}, addRecord, update
     try {
       const dataUrl = await fileToDataUrl(file)
       base64Ref.current = dataUrl          // store full data URL
-      setPhoto(dataUrl)                    // replace blob — persists after refresh
+      const persistentPhotoDataUrl = await compressImageDataUrl(dataUrl, { maxSide: 1280, quality: 0.78 })
+      setPhoto(persistentPhotoDataUrl)     // store a smaller image so browser storage does not overflow
       URL.revokeObjectURL(blobUrl)
       const aiDataUrl = await compressImageDataUrl(dataUrl)
       aiImageRef.current = aiDataUrl
@@ -158,8 +160,9 @@ export default function AddRecordPage({ navigate, params = {}, addRecord, update
       const [result] = await Promise.allSettled([
         recognizeFoodImage(aiDataUrl, note).then(r => { setAiResult(r); return r }),
         createCutoutDetailed(dataUrl)
-          .then(c => {
-            setCutout(c.image)
+          .then(async c => {
+            const persistentCutout = await compressTransparentImageDataUrl(c.image, { maxSide: 960, quality: 0.82 })
+            setCutout(persistentCutout)
             setCutoutProvider(c.provider)
             setCutoutLoading(false)
           })
@@ -211,8 +214,11 @@ export default function AddRecordPage({ navigate, params = {}, addRecord, update
       protein:  aiResult?.protein  || params.stamp?.protein  || 0,
       fat:      aiResult?.fat      || params.stamp?.fat      || 0,
     }
-    if (isEditing) updateRecord?.(record)
-    else addRecord?.(record)
+    const saved = isEditing ? updateRecord?.(record) : addRecord?.(record)
+    if (saved === false) {
+      alert('保存失败：浏览器本地存储空间不足。请删除几条旧记录，或换一张更小的照片后再试。')
+      return
+    }
     navigate(-1)
   }
 
