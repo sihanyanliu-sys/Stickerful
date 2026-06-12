@@ -1,7 +1,15 @@
 import { useState, useEffect } from 'react'
 import { SettingsProvider, useSettings } from './context/SettingsContext'
+import { AuthProvider, useAuth } from './context/AuthContext'
 import BottomNav from './components/BottomNav'
-import { cropToBBox } from './utils/cropCutout'
+import {
+  deleteRemoteRecord,
+  fetchRemoteRecords,
+  loadLocalRecords,
+  migrateLocalRecordsOnce,
+  saveLocalRecords,
+  saveRemoteRecord,
+} from './services/recordStore'
 
 import HomePage from './pages/HomePage'
 import AddRecordPage from './pages/AddRecordPage'
@@ -22,6 +30,7 @@ import ThemeSettingsPage from './pages/ThemeSettingsPage'
 import HealthOnboardingPage from './pages/HealthOnboardingPage'
 import HealthIntroModal from './components/HealthIntroModal'
 import AboutPage from './pages/AboutPage'
+import AuthPage from './pages/AuthPage'
 
 const TAB_PAGES = ['home', 'footprint', 'map', 'settings']
 
@@ -48,69 +57,98 @@ const PAGE_MAP = {
 
 function AppInner() {
   const { settings, updateSetting } = useSettings()
+  const { user, loading } = useAuth()
   const [stack, setStack] = useState([{ page: 'home', params: {} }])
   const [showHealthIntro, setShowHealthIntro] = useState(!settings.hasSeenHealthOnboarding)
-  const [records, setRecords] = useState(() => {
-    try {
-      const saved = localStorage.getItem('stickerful_records')
-      return saved ? JSON.parse(saved) : []
-    } catch {
-      return []
-    }
-  })
+  const [records, setRecords] = useState([])
+  const [recordsLoading, setRecordsLoading] = useState(false)
+  const [recordsError, setRecordsError] = useState('')
 
-  // One-time migration: crop existing cutouts to non-transparent bbox so
-  // they render at consistent visual size in StickerStack.
   useEffect(() => {
-    if (localStorage.getItem('stickerful_cutout_crop_v2') === 'done') return
+    if (!user) {
+      let cancelled = false
+      queueMicrotask(() => {
+        if (cancelled) return
+        setRecords([])
+        setRecordsLoading(false)
+        setRecordsError('')
+      })
+      return () => { cancelled = true }
+    }
+
     let cancelled = false
     ;(async () => {
-      const next = []
-      let changed = false
-      for (const r of records) {
-        if (r.cutout) {
-          try {
-            const cropped = await cropToBBox(r.cutout)
-            if (cropped !== r.cutout) changed = true
-            next.push({ ...r, cutout: cropped })
-          } catch {
-            next.push(r)
-          }
-        } else {
-          next.push(r)
-        }
+      const cached = loadLocalRecords(user.id)
+      if (cached.length > 0) setRecords(cached)
+      setRecordsLoading(true)
+      setRecordsError('')
+      try {
+        const remoteRecords = await fetchRemoteRecords(user.id)
+        const nextRecords = await migrateLocalRecordsOnce(user.id, remoteRecords)
+        if (cancelled) return
+        setRecords(nextRecords)
+        saveLocalRecords(user.id, nextRecords)
+      } catch (error) {
+        if (import.meta.env.DEV) console.warn('Failed to load cloud records:', error)
+        if (!cancelled) setRecordsError('云端记录加载失败，当前显示本地缓存。')
+      } finally {
+        if (!cancelled) setRecordsLoading(false)
       }
-      if (cancelled) return
-      if (changed) saveRecords(next)
-      localStorage.setItem('stickerful_cutout_crop_v2', 'done')
     })()
     return () => { cancelled = true }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [user])
 
   const current = stack[stack.length - 1]
 
-  function saveRecords(next) {
+  function cacheRecords(next) {
+    setRecords(next)
+    saveLocalRecords(user?.id, next)
+  }
+
+  async function addRecord(record) {
+    if (!user) return false
+    const draft = { ...record, id: String(record.id) }
+    const previous = records
+    cacheRecords([draft, ...previous])
     try {
-      localStorage.setItem('stickerful_records', JSON.stringify(next))
-      setRecords(next)
+      const saved = await saveRemoteRecord(user.id, draft)
+      cacheRecords([saved, ...previous])
       return true
     } catch (error) {
-      if (import.meta.env.DEV) console.warn('Failed to save records locally:', error)
+      if (import.meta.env.DEV) console.warn('Failed to save record:', error)
+      cacheRecords(previous)
       return false
     }
   }
 
-  function addRecord(record) {
-    return saveRecords([record, ...records])
+  async function updateRecord(record) {
+    if (!user) return false
+    const draft = { ...record, id: String(record.id) }
+    const previous = records
+    cacheRecords(previous.map(r => String(r.id) === String(draft.id) ? draft : r))
+    try {
+      const saved = await saveRemoteRecord(user.id, draft)
+      cacheRecords(previous.map(r => String(r.id) === String(saved.id) ? saved : r))
+      return true
+    } catch (error) {
+      if (import.meta.env.DEV) console.warn('Failed to update record:', error)
+      cacheRecords(previous)
+      return false
+    }
   }
 
-  function updateRecord(record) {
-    return saveRecords(records.map(r => r.id === record.id ? record : r))
-  }
-
-  function deleteRecord(id) {
-    return saveRecords(records.filter(r => r.id !== id))
+  async function deleteRecord(id) {
+    if (!user) return false
+    const previous = records
+    cacheRecords(previous.filter(r => String(r.id) !== String(id)))
+    try {
+      await deleteRemoteRecord(user.id, id)
+      return true
+    } catch (error) {
+      if (import.meta.env.DEV) console.warn('Failed to delete record:', error)
+      cacheRecords(previous)
+      return false
+    }
   }
 
   function navigate(target, params = {}) {
@@ -143,12 +181,37 @@ function AppInner() {
   // preference (e.g. 'linen') re-applies automatically.
   const textureClass = (!isDark && settings.texture !== 'none') ? `texture-${settings.texture}` : ''
 
+  if (loading || (recordsLoading && records.length === 0)) {
+    return (
+      <div className={`app-container ${themeClass} ${textureClass} flex h-svh max-w-sm mx-auto items-center justify-center overflow-hidden shadow-2xl`}>
+        <div className="flex flex-col items-center gap-4">
+          <img src="/assets/logo.png" alt="Stickerful" className="h-20 w-20 rounded-[24px] shadow-lg" />
+          <p className="text-[14px]" style={{ color: 'var(--text-2)' }}>
+            {loading ? '正在确认登录状态...' : '正在同步云端记录...'}
+          </p>
+        </div>
+      </div>
+    )
+  }
+
+  if (!user) {
+    return <AuthPage />
+  }
+
   return (
     <div
       className={`app-container ${themeClass} ${textureClass} flex flex-col h-svh max-w-sm mx-auto overflow-hidden shadow-2xl`}
       style={{ backgroundColor: 'var(--texture-bg)' }}
     >
       <div className="flex-1 overflow-hidden">
+        {recordsError && (
+          <div
+            className="absolute left-4 right-4 top-4 z-[999] rounded-[16px] px-4 py-3 text-center text-[13px] shadow-lg"
+            style={{ background: 'rgba(255,252,248,0.94)', color: '#B45309' }}
+          >
+            {recordsError}
+          </div>
+        )}
         <PageComponent
           navigate={navigate}
           params={current.params}
@@ -178,8 +241,10 @@ function AppInner() {
 
 export default function App() {
   return (
-    <SettingsProvider>
-      <AppInner />
-    </SettingsProvider>
+    <AuthProvider>
+      <SettingsProvider>
+        <AppInner />
+      </SettingsProvider>
+    </AuthProvider>
   )
 }

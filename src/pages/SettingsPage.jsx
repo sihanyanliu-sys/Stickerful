@@ -1,4 +1,5 @@
 import { useSettings } from '../context/SettingsContext'
+import { useAuth } from '../context/AuthContext'
 
 // Custom warm-ivory + caramel line-art icons (each SVG is self-contained with its own
 // circular background, so no extra wrapper needed here).
@@ -13,6 +14,7 @@ const MENU_ITEMS = [
 
 export default function SettingsPage({ navigate }) {
   const { settings } = useSettings()
+  const { user, signOut } = useAuth()
 
   return (
     <div className="app-page-bg flex flex-col h-full">
@@ -30,7 +32,9 @@ export default function SettingsPage({ navigate }) {
           </div>
           <div className="text-left flex-1">
             <p className="font-semibold text-[18px]" style={{ color: 'var(--text-1)' }}>{settings.userName}</p>
-            <p className="text-[14px] mt-0.5" style={{ color: 'var(--text-2)' }}>查看与编辑个人信息</p>
+            <p className="text-[14px] mt-0.5" style={{ color: 'var(--text-2)' }}>
+              {user?.email || '查看与编辑个人信息'}
+            </p>
           </div>
           <span className="text-[20px]" style={{ color: 'var(--border)' }}>›</span>
         </button>
@@ -56,7 +60,10 @@ export default function SettingsPage({ navigate }) {
           ))}
         </div>
 
-        <button className="w-full mt-6 py-3 font-medium text-red-400 active:opacity-60">
+        <button
+          onClick={signOut}
+          className="w-full mt-6 py-3 font-medium text-red-400 active:opacity-60"
+        >
           退出登录
         </button>
       </div>

@@ -95,6 +95,7 @@ export default function AddRecordPage({ navigate, params = {}, addRecord, update
   const [cutout,   setCutout]   = useState(restore.cutout   ?? params.stamp?.cutout   ?? null)
   const [cutoutProvider, setCutoutProvider] = useState(restore.cutoutProvider ?? params.stamp?.cutoutProvider ?? null)
   const [cutoutLoading, setCutoutLoading] = useState(false)
+  const [saving, setSaving] = useState(false)
 
   // Pre-populate AI result: from shop-search restore, or from editing a record with calorie data
   const initAiResult = (() => {
@@ -179,8 +180,9 @@ export default function AddRecordPage({ navigate, params = {}, addRecord, update
 
   const isEditing = !!params.stamp?.id
 
-  function handleSave() {
-    if (!shopName) return
+  async function handleSave() {
+    if (!shopName || saving) return
+    setSaving(true)
     const cachedLocation = getCachedLocation()
     const fallbackLat = cachedLocation ? Number(cachedLocation.lat) : null
     const fallbackLng = cachedLocation ? Number(cachedLocation.lng) : null
@@ -214,9 +216,10 @@ export default function AddRecordPage({ navigate, params = {}, addRecord, update
       protein:  aiResult?.protein  || params.stamp?.protein  || 0,
       fat:      aiResult?.fat      || params.stamp?.fat      || 0,
     }
-    const saved = isEditing ? updateRecord?.(record) : addRecord?.(record)
+    const saved = isEditing ? await updateRecord?.(record) : await addRecord?.(record)
+    setSaving(false)
     if (saved === false) {
-      alert('保存失败：浏览器本地存储空间不足。请删除几条旧记录，或换一张更小的照片后再试。')
+      alert('保存失败：云端记录没有写入成功。请检查网络，或稍后再试。')
       return
     }
     navigate(-1)
@@ -233,10 +236,11 @@ export default function AddRecordPage({ navigate, params = {}, addRecord, update
         <h2 className="flex-1 text-center font-semibold text-[17px]" style={{ color: 'var(--text-1)' }}>{isEditing ? '编辑记录' : '添加记录'}</h2>
         <button
           onClick={handleSave}
-          className="font-semibold text-[16px] active:opacity-60"
+          disabled={saving}
+          className="font-semibold text-[16px] active:opacity-60 disabled:opacity-50"
           style={{ color: shopName ? color : 'var(--text-2)' }}
         >
-          保存
+          {saving ? '保存中...' : '保存'}
         </button>
       </div>
 
