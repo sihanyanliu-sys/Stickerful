@@ -4,8 +4,9 @@ import { useAuth } from '../context/AuthContext'
 const RESEND_WAIT_SECONDS = 60
 
 export default function AuthPage() {
-  const { isConfigured, sendMagicLink, authError } = useAuth()
+  const { isConfigured, sendEmailOtp, verifyEmailOtp, authError } = useAuth()
   const [email, setEmail] = useState('')
+  const [otp, setOtp] = useState('')
   const [sentEmail, setSentEmail] = useState('')
   const [lastSentEmail, setLastSentEmail] = useState('')
   const [lastSentAt, setLastSentAt] = useState(0)
@@ -28,13 +29,13 @@ export default function AuthPage() {
     return () => window.clearInterval(timer)
   }, [waitingToResend])
 
-  async function handleSendLink(e) {
+  async function handleSendCode(e) {
     e.preventDefault()
     if (!emailIsValid || loading || waitingToResend) return
     setLoading(true)
     setError('')
     setMessage('')
-    const { error: nextError } = await sendMagicLink(email)
+    const { error: nextError } = await sendEmailOtp(email)
     setLoading(false)
     if (nextError) {
       setError(nextError)
@@ -44,7 +45,23 @@ export default function AuthPage() {
     setLastSentEmail(normalizedEmail)
     setLastSentAt(Date.now())
     setNow(Date.now())
-    setMessage('登录链接已经发送，请打开邮箱并点击确认链接。')
+    setOtp('')
+    setMessage('验证码已经发送，请查看邮箱后填入下方。')
+  }
+
+  async function handleVerifyCode(e) {
+    e.preventDefault()
+    if (!sentEmail || loading || otp.replace(/\s+/g, '').length < 6) return
+    setLoading(true)
+    setError('')
+    setMessage('')
+    const { error: nextError } = await verifyEmailOtp(sentEmail, otp)
+    setLoading(false)
+    if (nextError) {
+      setError(nextError)
+      return
+    }
+    setMessage('登录成功，正在进入 Stickerful。')
   }
 
   return (
@@ -80,7 +97,7 @@ export default function AuthPage() {
                 </p>
               </div>
             ) : !sentEmail ? (
-              <form onSubmit={handleSendLink} className="flex flex-col gap-4">
+              <form onSubmit={handleSendCode} className="flex flex-col gap-4">
                 <div>
                   <label className="mb-2 block text-[13px] font-semibold" style={{ color: 'var(--text-2)' }}>
                     邮箱
@@ -102,33 +119,57 @@ export default function AuthPage() {
                   className="mt-1 rounded-[18px] py-3.5 text-[16px] font-semibold text-white shadow-[0_10px_24px_rgba(201,141,72,0.24)] transition active:scale-[0.99] disabled:opacity-45"
                   style={{ background: '#C98D48' }}
                 >
-                  {loading ? '发送中...' : waitingToResend ? `${secondsUntilResend} 秒后可重发` : '发送登录链接'}
+                  {loading ? '发送中...' : waitingToResend ? `${secondsUntilResend} 秒后可重发` : '发送验证码'}
                 </button>
               </form>
             ) : (
-              <form onSubmit={handleSendLink} className="flex flex-col gap-4 text-center">
+              <form onSubmit={handleVerifyCode} className="flex flex-col gap-4">
                 <div className="rounded-[20px] border px-4 py-5" style={{ borderColor: 'var(--border)', background: 'rgba(255,252,248,0.66)' }}>
-                  <p className="text-[15px] font-semibold" style={{ color: 'var(--text-1)' }}>
+                  <p className="text-center text-[15px] font-semibold" style={{ color: 'var(--text-1)' }}>
                     请查看你的邮箱
                   </p>
-                  <p className="mt-2 break-all text-[13px] leading-6" style={{ color: 'var(--text-2)' }}>
+                  <p className="mt-2 break-all text-center text-[13px] leading-6" style={{ color: 'var(--text-2)' }}>
                     {sentEmail}
                   </p>
-                  <p className="mt-3 text-[13px] leading-6" style={{ color: 'var(--text-2)' }}>
-                    点击邮件里的确认链接后，会自动回到 Stickerful。
+                  <p className="mt-3 text-center text-[13px] leading-6" style={{ color: 'var(--text-2)' }}>
+                    把邮件里的验证码填到这里，即可在当前 App 里完成登录。
                   </p>
+                </div>
+                <div>
+                  <label className="mb-2 block text-[13px] font-semibold" style={{ color: 'var(--text-2)' }}>
+                    验证码
+                  </label>
+                  <input
+                    type="text"
+                    inputMode="numeric"
+                    autoComplete="one-time-code"
+                    value={otp}
+                    onChange={e => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
+                    placeholder="输入邮箱验证码"
+                    className="w-full rounded-[18px] border px-4 py-3.5 text-center text-[22px] font-semibold tracking-[0.35em] outline-none transition focus:border-[#C98D48]"
+                    style={{ background: 'rgba(255,252,248,0.86)', borderColor: 'var(--border)', color: 'var(--text-1)' }}
+                  />
                 </div>
                 <button
                   type="submit"
+                  disabled={loading || otp.replace(/\s+/g, '').length < 6}
+                  className="rounded-[18px] py-3.5 text-[16px] font-semibold text-white shadow-[0_10px_24px_rgba(201,141,72,0.24)] transition active:scale-[0.99] disabled:opacity-45"
+                  style={{ background: '#C98D48' }}
+                >
+                  {loading ? '验证中...' : '登录'}
+                </button>
+                <button
+                  type="button"
+                  onClick={handleSendCode}
                   disabled={loading || waitingToResend}
                   className="rounded-[18px] py-3.5 text-[16px] font-semibold text-white shadow-[0_10px_24px_rgba(201,141,72,0.24)] transition active:scale-[0.99] disabled:opacity-45"
                   style={{ background: '#C98D48' }}
                 >
-                  {loading ? '重新发送中...' : waitingToResend ? `${secondsUntilResend} 秒后可重发` : '重新发送登录链接'}
+                  {loading ? '重新发送中...' : waitingToResend ? `${secondsUntilResend} 秒后可重发` : '重新发送验证码'}
                 </button>
                 <button
                   type="button"
-                  onClick={() => { setSentEmail(''); setError(''); setMessage('') }}
+                  onClick={() => { setSentEmail(''); setOtp(''); setError(''); setMessage('') }}
                   className="py-1 text-[14px] font-medium active:opacity-70"
                   style={{ color: 'var(--text-2)' }}
                 >

@@ -6,15 +6,11 @@ const AuthContext = createContext(null)
 function authErrorMessage(error) {
   if (!error) return '登录失败，请稍后再试。'
   const message = error.message || ''
-  if (message.toLowerCase().includes('invalid')) return '登录链接无效或已过期，请重新发送。'
+  if (message.toLowerCase().includes('invalid')) return '验证码无效或已过期，请检查后重试。'
   if (message.toLowerCase().includes('rate') || message.toLowerCase().includes('too many')) {
-    return '登录链接刚刚发送过，请等待 60 秒后再试。你也可以直接打开刚才那封邮件。'
+    return '验证码刚刚发送过，请等待 60 秒后再试。'
   }
   return message || '登录失败，请稍后再试。'
-}
-
-function getAuthRedirectUrl() {
-  return import.meta.env.VITE_AUTH_REDIRECT_URL || `${window.location.origin}/auth/callback`
 }
 
 function hasLegacyPkceCode() {
@@ -58,7 +54,7 @@ export function AuthProvider({ children }) {
         setAuthError('')
       } else if (hasLegacyPkceCode()) {
         cleanAuthUrl()
-        setAuthError('这封旧登录邮件已经不能完成登录，请重新发送一封新的登录链接。')
+        setAuthError('这封旧登录邮件已经不能完成登录，请回到 Stickerful 重新获取验证码。')
       } else {
         const urlError = getAuthErrorFromUrl()
         if (urlError) {
@@ -83,15 +79,26 @@ export function AuthProvider({ children }) {
     }
   }, [])
 
-  async function sendMagicLink(email) {
+  async function sendEmailOtp(email) {
     if (!supabase) return { error: 'Supabase 还没有配置完成。' }
     const normalizedEmail = email.trim().toLowerCase()
     const { error } = await supabase.auth.signInWithOtp({
       email: normalizedEmail,
       options: {
         shouldCreateUser: true,
-        emailRedirectTo: getAuthRedirectUrl(),
       },
+    })
+    return { error: error ? authErrorMessage(error) : null }
+  }
+
+  async function verifyEmailOtp(email, token) {
+    if (!supabase) return { error: 'Supabase 还没有配置完成。' }
+    const normalizedEmail = email.trim().toLowerCase()
+    const normalizedToken = token.replace(/\s+/g, '')
+    const { error } = await supabase.auth.verifyOtp({
+      email: normalizedEmail,
+      token: normalizedToken,
+      type: 'email',
     })
     return { error: error ? authErrorMessage(error) : null }
   }
@@ -108,7 +115,8 @@ export function AuthProvider({ children }) {
     loading,
     authError,
     isConfigured: isSupabaseConfigured,
-    sendMagicLink,
+    sendEmailOtp,
+    verifyEmailOtp,
     signOut,
   }), [session, loading, authError])
 
