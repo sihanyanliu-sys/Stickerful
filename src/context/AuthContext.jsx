@@ -17,10 +17,25 @@ function getAuthRedirectUrl() {
   return import.meta.env.VITE_AUTH_REDIRECT_URL || `${window.location.origin}/auth/callback`
 }
 
-function removeAuthCodeFromUrl() {
+function hasLegacyPkceCode() {
   const url = new URL(window.location.href)
-  url.searchParams.delete('code')
-  window.history.replaceState(window.history.state, '', url.toString())
+  return url.searchParams.has('code')
+}
+
+function getAuthErrorFromUrl() {
+  const query = new URLSearchParams(window.location.search)
+  const hash = new URLSearchParams(window.location.hash.replace(/^#/, ''))
+  return (
+    query.get('error_description')
+    || hash.get('error_description')
+    || query.get('error')
+    || hash.get('error')
+    || ''
+  )
+}
+
+function cleanAuthUrl() {
+  window.history.replaceState(window.history.state, '', '/')
 }
 
 export function AuthProvider({ children }) {
@@ -35,32 +50,30 @@ export function AuthProvider({ children }) {
 
     let active = true
     async function initAuth() {
-      const url = new URL(window.location.href)
-      const code = url.searchParams.get('code')
-
-      if (code) {
-        const { data, error } = await supabase.auth.exchangeCodeForSession(code)
-        if (!active) return
-        if (!error) {
-          removeAuthCodeFromUrl()
-          setSession(data.session ?? null)
-          setAuthError('')
-          setLoading(false)
-          return
-        }
-        setAuthError(authErrorMessage(error))
-      }
-
       const { data } = await supabase.auth.getSession()
       if (!active) return
       setSession(data.session ?? null)
+      if (data.session) {
+        cleanAuthUrl()
+        setAuthError('')
+      } else if (hasLegacyPkceCode()) {
+        cleanAuthUrl()
+        setAuthError('这封旧登录邮件已经不能完成登录，请重新发送一封新的登录链接。')
+      } else {
+        const urlError = getAuthErrorFromUrl()
+        if (urlError) {
+          cleanAuthUrl()
+          setAuthError(urlError)
+        }
+      }
       setLoading(false)
     }
     initAuth()
 
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, nextSession) => {
+    const { data: listener } = supabase.auth.onAuthStateChange((event, nextSession) => {
       setSession(nextSession)
       setAuthError('')
+      if (event === 'SIGNED_IN') cleanAuthUrl()
       setLoading(false)
     })
 
